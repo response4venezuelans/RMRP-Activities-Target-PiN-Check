@@ -13,7 +13,7 @@ library("readxl")
 library(ggplot2)
 library(writexl)
 
-submissions_cr_2025 <- read_excel("C:/Users/JERABEK/OneDrive - UNHCR/UNHCR RBA Panama/CAM/Costa Rica/RMRP 2025 2026 submission/Submissions/org_submissions_target_pin_check.xlsx", 
+submissions_cr_2025 <- read_excel("xxx/org_submissions_template.xlsx", 
                                   sheet = "2025_direct_assistance")%>%
   mutate(across(everything(), ~ replace(., is.na(.), 0)))
 
@@ -66,7 +66,7 @@ submissions_cr_2025<- submissions_cr_2025 %>%
 
 #Pin 2025
 
-pin_check_costa_rica_2025 <- read_excel("C:/Users/JERABEK/OneDrive - UNHCR/UNHCR RBA Panama/CAM/Costa Rica/RMRP 2025 2026 submission/Submissions/pin_check_costa_rica.xlsx", 
+pin_check_costa_rica_2025 <- read_excel("XXX/pin_check_costa_rica.xlsx", 
                                         sheet = "2025")%>%
   #calculate overall on the move numbers (venezuela and other nationalities)
   rowwise() %>% 
@@ -147,11 +147,11 @@ mutate(review_comment = case_when(
     women_move_flag == 'Review' | men_move_flag == 'Review' ~ 'Review required',
   TRUE ~ 'No review needed'))
 
-write_xlsx(activities_pin_cr_2025,"C:/Users/JERABEK/OneDrive - UNHCR/UNHCR RBA Panama/CAM/Costa Rica/RMRP 2025 2026 submission/Submissions/activities_pin_cr_2025.xlsx")
+write_xlsx(activities_pin_cr_2025,"xxX/activities_pin_cr_2025.xlsx")
 
 
 # 2026
-pin_check_costa_rica_2026 <- read_excel("C:/Users/JERABEK/OneDrive - UNHCR/UNHCR RBA Panama/CAM/Costa Rica/RMRP 2025 2026 submission/Submissions/pin_check_costa_rica.xlsx", 
+pin_check_costa_rica_2026 <- read_excel("XXX/pin_check_costa_rica.xlsx", 
                                         sheet = "2026")
 
 pin_gender_age_proportions <- pin_check_costa_rica_2025 %>%
@@ -251,7 +251,7 @@ pin_cr_2026 <- pin_gender_age_proportions %>%
 
 #Submissions 2026
 
-submissions_cr_2026 <- read_excel("C:/Users/JERABEK/OneDrive - UNHCR/UNHCR RBA Panama/CAM/Costa Rica/RMRP 2025 2026 submission/Submissions/org_submissions_target_pin_check.xlsx", 
+submissions_cr_2026 <- read_excel("XXX/org_submissions_template.xlsx", 
                                   sheet = "2026_direct_assistance")%>%
   mutate(across(everything(), ~ replace(., is.na(.), 0))) 
 
@@ -363,6 +363,6 @@ mutate(review_comment = case_when(
   TRUE ~ 'No review needed'))
 
 
-write_xlsx(activities_pin_cr_2026,"C:/Users/JERABEK/OneDrive - UNHCR/UNHCR RBA Panama/CAM/Costa Rica/RMRP 2025 2026 submission/Submissions/activities_pin_cr_2026.xlsx")
+write_xlsx(activities_pin_cr_2026,"XXX/activities_pin_cr_2026.xlsx")
 
 
