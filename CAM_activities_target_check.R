@@ -83,7 +83,7 @@ pin_check_costa_rica_2025 <- read_excel("XXX/pin_check_costa_rica.xlsx",
   ungroup()
 
 
-pin_check_costa_rica_2025 %>%
+pin_cr_2025<-pin_check_costa_rica_2025 %>%
   filter(sector!="Intersector")%>%
   select(sector, pin_girls, pin_boys, pin_women,pin_men, pin_total, 
          pin_girls_dest, pin_boys_dest, pin_women_dest, pin_men_dest, pin_total_dest, 
